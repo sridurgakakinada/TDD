@@ -1,8 +1,10 @@
 version: 2.1
+
 jobs:
   build_and_push:
     docker:
       - image: cimg/python:3.8
+
     steps:
       - checkout
       - setup_remote_docker:
