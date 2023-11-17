@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Authenticate with Docker Hub
           command: |
-            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_ACCESS_TOKEN
+            docker login -u $DOCKERHUB_USERNAME p $DOCKERHUB_ACCESS_TOKEN
       - run:
           name: Push Docker Image to Docker Hub
           command: |
