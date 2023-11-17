@@ -1,4 +1,5 @@
 import pytest
+
 from sparse_recommender import SparseMatrix
 
 def test_set_method():
