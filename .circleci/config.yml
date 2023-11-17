@@ -14,10 +14,9 @@ jobs:
           command: |
             docker build -t $DOCKERHUB_USERNAME/dockera:${CIRCLE_SHA1} .
       - run:
-          name: Debug Docker Login
+          name: Authenticate with Docker Hub
           command: |
-            echo "DOCKERHUB_USERNAME: $DOCKERHUB_USERNAME"
-            echo "DOCKERHUB_ACCESS_TOKEN: $DOCKERHUB_ACCESS_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            echo "$DOCKERHUB_PASS" | docker login --username $DOCKERHUB_USERNAME --password-stdi
       - run:
           name: Push Docker Image to Docker Hub
           command: |
