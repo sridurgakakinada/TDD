@@ -29,10 +29,12 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: pip install -r requirements.txt  # Add any dependencies needed for your tests
+          command: |
+            pip install pytest
       - run:
-          name: Run Tests
-          command: pytest
+          name: Run Test Cases
+          command: |
+            pytest test.py
 
 
 workflows:
